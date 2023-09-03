@@ -5,7 +5,7 @@ var TLParamsInheritance = anime.timeline();
 TLParamsInheritance
   .add({
     targets: '.title-name2 img',
-    translateX: [500, 0], // 右から0位置へ移動
+    translateX: [-500, 0], // 右から0位置へ移動
     opacity: [0, 1], // 透明から不透明へ
     duration: 2000, // アニメーションの時間（ミリ秒）
     easing: 'easeOutExpo', // イージング
@@ -68,7 +68,7 @@ var TLParamsInheritance = anime.timeline();
 TLParamsInheritance
   .add({
     targets: '.title-name1 img',
-    translateX: [-500, 0], // 右から0位置へ移動
+    translateX: [500, 0], // 右から0位置へ移動
     opacity: [0, 1], // 透明から不透明へ
     duration: 2000, // アニメーションの時間（ミリ秒）
     easing: 'easeOutExpo', // イージング
