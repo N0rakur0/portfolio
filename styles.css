@@ -1,133 +1,74 @@
-/* グローバルなスタイル */
-html, body {
+/* CSSファイル内の既存のスタイル */
+body, div {
   margin: 0;
   padding: 0;
-  height: 100%;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
-/* Wrapper のスタイル */
-.wrapper {
-  width: 100vw;
-  height: 100vh;
-  position: relative;
-  overflow: hidden;
-}
-
-/* メインビジュアルのスタイル */
-.main-visual {
-  position: absolute;
+/* 背景のスタイル */
+#background {
+  position: fixed; /* 画面スクロールに影響を受けないように固定 */
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
+  width: 100%; /* 画面幅いっぱいに広がる */
+  height: 100%; /* 画面高さいっぱいに広がる */
+  z-index: -2; /* 背景はコンテンツよりも後ろに表示 */
+  background-size: cover; /* 背景画像を画面に合わせて拡大縮小 */
+  background-repeat: no-repeat; /* 背景画像の繰り返しを無効化 */
+}
+
+#scroll {
+  display: flex;
+  flex-direction: row;
+  width: 500%;
+  height: 100vh;
+}
+
+/* wrapperのスタイル */
+.wrapper {
+  width: 100%; /* 各wrapper要素の幅 */
+  height: 100vh; /* 画面の高さいっぱいに表示 */
+  display: flex;
+  flex-direction: column; /* 子要素を縦に配置する */
+  align-items: center; /* 子要素を水平方向に中央揃えする */
+  justify-content: center; /* 子要素を垂直方向に中央揃えする */
   overflow: hidden;
 }
 
-.main-visual img {
+/* visual要素のスタイル */
+.visual {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* imgがはみ出さないように */
 }
+
+/* visual内のimgのスタイル */
+.visual img {
+  width: 100%;
+  height: 100%;
+}
+
 
 /* タイトルのスタイル */
 .title {
-  position: relative;
+  position: absolute;
   display: flex;
-  align-items: center;
-  height: 100%;
-  z-index: 1;
 }
 
 .title-name1,
 .title-name2 {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 2;
+  display: flex; /* 子要素をフレックスコンテナとして配置 */
+  flex-direction: column; /* 子要素を縦方向に配置 */
+  justify-content: center; /* 子要素を水平方向に中央揃えする */
+  align-items: center; /* 子要素を垂直方向に中央揃えする */
 }
 
-.title-name1 {
-  right: 35%;
+.title img {
+  width: 60%; /* 幅を50%に設定 */
+  height: auto; /* 高さを自動調整（アスペクト比を保つため） */
 }
 
-.title-name2 {
-  left: 35%;
-}
-
-/* 背景の設定 */
-#background {
-  background-color: white; /* 背景色を白に設定 */
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -2;
-}
-
-/* ハンバーガーメニュー全体のスタイル */
-.hamburger-menu {
-  position: relative;
-}
-
-/* ハンバーガーアイコン */
-.hamburger-icon {
-  width: 100px;
-  height: 100px;
-  cursor: pointer;
-}
-
-/* メニューアイコン */
-.menu-icon {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  opacity: 0;
-  pointer-events: none;
-  z-index: 9998;
-}
-
-/* チェックボックスのスタイル */
-.menu-toggle {
-  display: none;
-}
-
-/* メニューのスタイル */
-.menu {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 80%;
-  height: 100%;
-  background-color: rgba(255, 255, 255, 0.9);
-  transform: translateX(-100%);
-  transition: transform 0.3s;
-  z-index: 9999;
-  padding: 40px;
-  box-sizing: border-box;
-}
-
-.menu a {
-  text-decoration: none;
-  color: #000;
-  font-size: 24px;
-  margin-bottom: 20px;
-}
-
-/* メニューが表示された状態 */
-.menu-toggle:checked ~ .menu-icon {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.menu-toggle:checked ~ .menu {
-  transform: translateX(0);
-}
