@@ -72,3 +72,63 @@ body, div {
   height: auto; /* 高さを自動調整（アスペクト比を保つため） */
 }
 
+/* アバウトページ */
+/* styles.css */
+
+/* container要素にスタイルを適用 */
+#container {
+  position: absolute;
+  background-color: white; /* 背景色を白に設定 */
+  border: 1px solid black; /* 枠線を黒に設定 */
+  text-align: left; /* 左寄せに配置 */
+  padding: 20px; /* 余白を追加（適宜調整） */
+  opacity: 0.7;
+  width: 50%;
+  height: 90%;
+}
+
+/* ABOUTページ */
+.about-container {
+  right: 3%;
+}
+
+/* h2要素の前に疑似要素を追加 */
+.content h2::before {
+  content: "\2022"; /* ●のUnicode文字コード */
+  color: #d4421b; /* 色を#d4421bに設定 */
+  margin-right: 5px; /* ●とテキストの間隔を調整（適宜調整） */
+}
+
+/* h2要素のスタイルを変更 */
+.content h2 {
+  font-size: 28px; /* 文字サイズを大きくする（適宜調整） */
+  margin: 20px 0 0 20px; /* 上右下左のマージンを設定 */
+  color: #d4421b;
+  letter-spacing: 10px; /* 文字間隔を調整（適宜調整） */
+}
+
+
+/* h3要素のスタイルを変更 */
+.heading h3 {
+  font-weight: bold; /* 太字にする */
+  font-size: 40px; /* 文字サイズを大きくする（適宜調整） */
+  margin: 50px 0 0 20px;
+  letter-spacing: 20px; /* 文字間隔を調整（適宜調整） */
+}
+
+/* explanation要素内のスタイルを変更 */
+.explanation {
+  margin: 50px 10px 20px 20px; /* 20pxのマージンを追加 */
+  line-height: 2.0; /* 行間を1.5倍に設定 */
+}
+
+/* explanation要素内のp要素（テキスト）の文字間隔を設定 */
+.explanation p {
+  letter-spacing: 8px; /* 文字間隔を2pxに設定 */
+  margin-bottom: 50px;
+}
+
+/* SKILLページ */
+.skill-container {
+  left: 3%;
+}
