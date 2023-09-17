@@ -140,6 +140,49 @@ body, div {
   filter: hue-rotate(240deg) saturate(3.5);
 }
 
+.logo {
+  display: flex;
+  flex-wrap: wrap;
+  
+  width: fit-content; /* コンテナの幅を画像に合わせる */
+}
+
+.logo > div {
+  display: flex;
+  flex-direction: column; /* 子要素を縦に配置 */
+  justify-content: center; /* 子要素を垂直方向に中央揃え */
+  align-items: center; /* 子要素を水平方向に中央揃え */
+  width: calc(33.33% - 20px); /* 画像の幅を33.33%に設定（20pxの余白を考慮） */
+  margin: 10px; /* 画像の下部に20pxの余白を追加 */
+  box-sizing: border-box; /* 幅に余白を含めるためにbox-sizingを設定 */
+}
+
+.logo img {
+  max-width: 70%; 
+  height: auto; /* 高さを自動調整（アスペクト比を保つ） */
+  margin-bottom: 5px;
+}
+
+.logo h4 {
+  margin: 5px;
+  text-align: center; /* テキストを中央揃えにする */
+  letter-spacing: 4px;
+}
+
+.custom-size img {
+  width: 65%;
+}
+
+/* サービスページ */
+
+.service-container {
+  right: 3%;
+}
+
+.service-img {
+  filter: hue-rotate(-27deg) saturate(3.5);
+}
+
 .service {
   display: flex;
   flex-wrap: wrap;
@@ -167,18 +210,4 @@ body, div {
   margin: 5px;
   text-align: center; /* テキストを中央揃えにする */
   letter-spacing: 4px;
-}
-
-.custom-size img {
-  width: 65%;
-}
-
-/* サービスページ */
-
-.service-container {
-  right: 3%;
-}
-
-.service-img {
-  filter: hue-rotate(-27deg) saturate(3.5);
 }
