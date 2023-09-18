@@ -1,10 +1,71 @@
 /* CSSファイル内の既存のスタイル */
-body, div {
+body,
+div {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
   overflow-y: hidden;
 }
+
+/* ロード画面 */
+.loader-wrapper {
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #DADAD8; /* ローディング画面の背景色を設定 */
+  z-index: 9999; /* 最前面に表示 */
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader-wrapper {
+  text-align: center;
+  /* フェードアウト用のスタイル */
+  opacity: 1; /* 初期状態は完全に不透明 */
+  transition: opacity 1s ease-in-out; /* opacityプロパティを変更する際のトランジション設定 */
+}
+
+.loader-wrapper.hidden {
+  opacity: 0; /* フェードアウト時は完全に透明にする */
+  pointer-events: none; /* 透明になった要素はクリックなどのイベントを受け付けないようにする */
+}
+
+.load-img {
+  width: 10vw;
+  height: auto;
+  margin: 5px;
+}
+
+.load-coment {
+  margin-left: 5px;
+  font-family: "Nico Moji";
+  transform: scale(0.8); /* 初期状態は縮小 */
+  animation: scaleUpDown 2s ease infinite; /* 拡大/縮小のアニメーション */
+}
+
+@keyframes scaleUpDown {
+  0%, 100% { transform: scale(0.8); }
+  50% { transform: scale(1); }
+}
+
+.loader-wrapper img {
+  animation: spin 2s linear infinite; /* 画像にアニメーションを適用 */
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+#scroll {
+  display: none; /* 初期状態では非表示 */
+}
+
 
 /* 背景のスタイル */
 #background {
@@ -52,7 +113,6 @@ body, div {
   height: 100%;
 }
 
-
 /* タイトルのスタイル */
 .title {
   position: absolute;
@@ -72,8 +132,6 @@ body, div {
   height: auto; /* 高さを自動調整（アスペクト比を保つため） */
 }
 
-
-
 /* container要素にスタイルを適用 */
 #container {
   position: absolute;
@@ -90,7 +148,6 @@ body, div {
   right: 3%;
 }
 
-
 /* h2要素の前に疑似要素を追加 */
 .content h2::before {
   content: "\2022"; /* ●のUnicode文字コード */
@@ -104,7 +161,6 @@ body, div {
   color: #d4421b;
   letter-spacing: 10px; /* 文字間隔を調整（適宜調整） */
 }
-
 
 /* h3要素のスタイルを変更 */
 .heading h3 {
@@ -137,13 +193,13 @@ body, div {
 }
 
 .skill-img {
-  filter: hue-rotate(240deg) saturate(3.5);
+  filter: hue-rotate(240deg) saturate(1.5);
 }
 
 .logo {
   display: flex;
   flex-wrap: wrap;
-  
+
   width: fit-content; /* コンテナの幅を画像に合わせる */
 }
 
@@ -158,7 +214,7 @@ body, div {
 }
 
 .logo img {
-  max-width: 70%; 
+  max-width: 70%;
   height: auto; /* 高さを自動調整（アスペクト比を保つ） */
   margin-bottom: 5px;
 }
@@ -180,13 +236,13 @@ body, div {
 }
 
 .service-img {
-  filter: hue-rotate(-27deg) saturate(3.5);
+  filter: hue-rotate(-27deg) saturate(1.5);
 }
 
 .service {
   display: flex;
   flex-wrap: wrap;
-  
+
   width: fit-content; /* コンテナの幅を画像に合わせる */
 }
 
@@ -201,7 +257,7 @@ body, div {
 }
 
 .service img {
-  max-width: 70%; 
+  max-width: 70%;
   height: auto; /* 高さを自動調整（アスペクト比を保つ） */
   margin-bottom: 5px;
 }
@@ -211,3 +267,4 @@ body, div {
   text-align: center; /* テキストを中央揃えにする */
   letter-spacing: 4px;
 }
+
