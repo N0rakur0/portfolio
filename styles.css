@@ -1,3 +1,8 @@
+* {
+  box-sizing: border-box;
+}
+
+
 /* CSSファイル内の既存のスタイル */
 body,
 div {
@@ -268,3 +273,213 @@ div {
   letter-spacing: 4px;
 }
 
+/* コンタクトページ */
+
+.contact-container {
+  left: 3%;
+  overflow:scroll;
+  overflow-x: hidden;
+}
+
+.contact-img {
+  z-index: 0;
+  filter: hue-rotate(-359deg) saturate(1.2);
+}
+
+
+#formWrap {
+  position: relative;
+  width: 45vw;
+  margin: 0 auto;
+  color: #333;
+  font-size: 1rem;
+  padding: 5px;
+}
+
+table.formTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table.formTable td,
+table.formTable th {
+  border: 1px solid #ccc;
+  padding: 12px;
+  text-align: left;
+}
+
+table.formTable th {
+  width: 30%;
+  font-weight: bold;
+  background: #efefef;
+}
+
+table.formTable input[type="text"],
+table.formTable textarea,
+table.formTable select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+table.formTable select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: url("arrow.png") no-repeat right center;
+  background-size: 20px;
+  padding-right: 30px;
+}
+
+table.formTable input[type="radio"],
+table.formTable input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+table.formTable p {
+  text-align: center;
+  margin-top: 20px;
+}
+
+table.formTable input[type="submit"],
+table.formTable input[type="reset"] {
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+table.formTable input[type="submit"]:hover,
+table.formTable input[type="reset"]:hover {
+  background-color: #0056b3;
+}
+
+/* 確認ボタンのスタイル */
+input[type="submit"] {
+  padding: 12px 24px; /* パディングを調整してボタンのサイズを変更 */
+  margin: 5px;
+  background-color: #fff; /* ボタンの背景色 */
+  color: #000; /* ボタンのテキスト色 */
+  border:  1px solid #000; /* 枠線を追加 */
+  border-radius: 5px;
+  font-size: 1rem; /* ボタンのテキストサイズ */
+  transition: background-color 0.3s ease; /* ホバーエフェクトのアニメーション */
+}
+
+input[type="submit"]:hover {
+  background-color: #ff4500; /* ホバー時の背景色 */
+}
+
+/* リセットボタンのスタイル */
+input[type="reset"] {
+  padding: 12px 24px;
+  margin: 5px;
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #000; /* 枠線を追加 */
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+input[type="reset"]:hover {
+  background-color: #0056b3;
+}
+
+/* カーソルボタン */
+/* ① ご用件欄*/
+select[name="ご用件"]:hover {
+  cursor: pointer;
+}
+
+
+/* カーソルをポインターに変更 */
+#selectBox option:hover {
+  cursor: pointer;
+}
+
+
+/* ② お名前欄*/
+input[name="お名前"]:hover {
+  cursor: pointer;
+}
+
+/* ③ 電話番号欄 */
+input[name="電話番号"]:hover {
+  cursor: pointer;
+}
+
+/* ④E-mail欄 */
+input[name="Email"]:hover {
+  cursor: pointer;
+}
+
+/* ⑤ 性別欄 */
+input[type="radio"]:hover,
+input[type="checkbox"]:hover {
+  cursor: pointer;
+}
+
+/* ⑥ サイトを知ったきっかけ欄 */
+input[name="サイトを知ったきっかけ[]"]:hover {
+  cursor: pointer;
+}
+
+/* ④お問い合わせ欄 */
+textarea[name="お問い合わせ内容"]:hover {
+  cursor: pointer;
+}
+
+
+/* ⑦ 確認ボタンとリセットボタン */
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+  cursor: pointer;
+}
+
+/* th要素にカーソルを合わせた時 */
+table.formTable th:hover {
+  cursor: pointer;
+}
+
+/* th要素内のセレクトボックスにカーソルを合わせた時 */
+table.formTable th select:hover {
+  cursor: pointer;
+}
+
+
+
+
+
+/* Add more styles as needed for checkboxes, radio buttons, and other elements */
+
+/*　簡易版レスポンシブ用CSS（必要最低限のみとしています。ブレークポイントも含め自由に設定下さい）　*/
+@media screen and (max-width:572px) {
+#formWrap {
+	width:95%;
+	margin:0 auto;
+}
+table.formTable th, table.formTable td {
+	width:auto;
+	display:block;
+}
+table.formTable th {
+	margin-top:5px;
+	border-bottom:0;
+}
+form input[type="text"], form textarea {
+	width:80%;
+	padding:5px;
+	font-size:110%;
+	display:block;
+}
+form input[type="submit"], form input[type="reset"], form input[type="button"] {
+	display:block;
+	width:100%;
+	height:40px;
+}
+}
