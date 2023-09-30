@@ -31,7 +31,11 @@
       <!-- ﾒｲﾝﾋﾞｼﾞｭｱﾙﾍﾟｰｼﾞ -->
       <div class="wrapper">
         <div class="visual">
-          <img src="./img/ﾒｲﾝﾋﾞｼﾞｭｱﾙ最新.png" alt="" />
+          <picture class="mobile">
+            <!-- ブラウザ幅～768pxまでsampleの画像が表示 -->
+            <source srcset="./img/モバイル用画像.png" media="(max-width: 768px)" type="image/png">
+            <img src="./img/ﾒｲﾝﾋﾞｼﾞｭｱﾙ最新.png" alt="" />
+          </picture>
         </div>
         <div class="title">
           <div class="title-name1">
@@ -252,6 +256,5 @@
     <script src="./js/script.js"></script>
   </body>
 </html>
-
 
 
