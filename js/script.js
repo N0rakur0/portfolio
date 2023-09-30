@@ -1,5 +1,3 @@
-// ロード画面
-
 document.addEventListener("DOMContentLoaded", function() {
     const loaderWrapper = document.querySelector(".loader-wrapper");
 
@@ -13,24 +11,25 @@ document.addEventListener("DOMContentLoaded", function() {
 // 横スクロール
 const wrapper = document.querySelector('#scroll');
 if (wrapper) {
-    // gsap.registerPlugin(ScrollTrigger); // npm/yarnの際に必要
-    const panels = gsap.utils.toArray('.wrapper'); 
+    const panels = gsap.utils.toArray('.wrapper');
     const wrapperWidth = wrapper.offsetWidth;
 
-    // 横スクロールのアニメーション設定
-    gsap.to(panels, {
-        xPercent: -100 * (panels.length - 1),
-        ease: "none",
-        scrollTrigger: {
-            trigger: wrapper,
-            pin: true,
-            scrub: 1,
-            snap: {
-                snapTo: 1 / (panels.length - 1),
-                duration: { min: 0.4, max: 0.6 },
-                ease: "none"
-            },
-            end: () => "+=" + wrapperWidth
-        }
-    });
+    // ウィンドウ幅が768px以上の場合にアニメーションを実行
+    if (window.innerWidth >= 768) {
+        gsap.to(panels, {
+            xPercent: -100 * (panels.length - 1),
+            ease: "none",
+            scrollTrigger: {
+                trigger: wrapper,
+                pin: true,
+                scrub: 1,
+                snap: {
+                    snapTo: 1 / (panels.length - 1),
+                    duration: { min: 0.4, max: 0.6 },
+                    ease: "none"
+                },
+                end: () => "+=" + wrapperWidth
+            }
+        });
+    }
 }
