@@ -2,7 +2,6 @@
   box-sizing: border-box;
 }
 
-
 /* CSSファイル内の既存のスタイル */
 body,
 div {
@@ -20,7 +19,7 @@ div {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #DADAD8; /* ローディング画面の背景色を設定 */
+  background-color: #dadad8; /* ローディング画面の背景色を設定 */
   z-index: 9999; /* 最前面に表示 */
   display: flex;
   flex-flow: column;
@@ -54,8 +53,13 @@ div {
 }
 
 @keyframes scaleUpDown {
-  0%, 100% { transform: scale(0.8); }
-  50% { transform: scale(1); }
+  0%,
+  100% {
+    transform: scale(0.8);
+  }
+  50% {
+    transform: scale(1);
+  }
 }
 
 .loader-wrapper img {
@@ -63,14 +67,17 @@ div {
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 #scroll {
   display: none; /* 初期状態では非表示 */
 }
-
 
 /* 背景のスタイル */
 #background {
@@ -104,6 +111,16 @@ div {
 
 /* visual要素のスタイル */
 .visual {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* imgがはみ出さないように */
+}
+
+/* ﾓﾊﾞｲﾙ用表示画像 */
+.mobile {
   width: 100%;
   height: 100%;
   display: flex;
@@ -162,7 +179,7 @@ div {
 
 /* h2要素のスタイルを変更 */
 .content h2 {
-  font-size: 28px; /* 文字サイズを大きくする（適宜調整） */
+  font-size: 2rem; /* 文字サイズを大きくする（適宜調整） */
   color: #d4421b;
   letter-spacing: 10px; /* 文字間隔を調整（適宜調整） */
 }
@@ -170,7 +187,7 @@ div {
 /* h3要素のスタイルを変更 */
 .heading h3 {
   font-weight: bold; /* 太字にする */
-  font-size: 40px; /* 文字サイズを大きくする（適宜調整） */
+  font-size: 2.5rem; /* 文字サイズを大きくする（適宜調整） */
   margin: 10px;
   letter-spacing: 20px; /* 文字間隔を調整（適宜調整） */
 }
@@ -179,6 +196,7 @@ div {
 .explanation {
   margin: 10px;
   line-height: 3.5; /* 行間を1.5倍に設定 */
+  font-size: 1.1rem;
 }
 
 /* explanation要素内のp要素（テキスト）の文字間隔を設定 */
@@ -195,6 +213,7 @@ div {
 /* SKILLページ */
 .skill-container {
   left: 3%;
+  overflow: auto; /* または overflow: scroll; */
 }
 
 .skill-img {
@@ -228,6 +247,7 @@ div {
   margin: 5px;
   text-align: center; /* テキストを中央揃えにする */
   letter-spacing: 4px;
+  font-size: 1.1rem;
 }
 
 .custom-size img {
@@ -238,6 +258,7 @@ div {
 
 .service-container {
   right: 3%;
+  overflow: auto; /* または overflow: scroll; */
 }
 
 .service-img {
@@ -271,13 +292,14 @@ div {
   margin: 5px;
   text-align: center; /* テキストを中央揃えにする */
   letter-spacing: 4px;
+  font-size: 1.1rem;
 }
 
 /* コンタクトページ */
 
 .contact-container {
   left: 3%;
-  overflow:scroll;
+  overflow: scroll;
   overflow-x: hidden;
 }
 
@@ -285,7 +307,6 @@ div {
   z-index: 0;
   filter: hue-rotate(-359deg) saturate(1.2);
 }
-
 
 #formWrap {
   position: relative;
@@ -346,7 +367,7 @@ table.formTable p {
 table.formTable input[type="submit"],
 table.formTable input[type="reset"] {
   padding: 10px 20px;
-  background-color: #007BFF;
+  background-color: #007bff;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -364,7 +385,7 @@ input[type="submit"] {
   margin: 5px;
   background-color: #fff; /* ボタンの背景色 */
   color: #000; /* ボタンのテキスト色 */
-  border:  1px solid #000; /* 枠線を追加 */
+  border: 1px solid #000; /* 枠線を追加 */
   border-radius: 5px;
   font-size: 1rem; /* ボタンのテキストサイズ */
   transition: background-color 0.3s ease; /* ホバーエフェクトのアニメーション */
@@ -396,12 +417,10 @@ select[name="ご用件"]:hover {
   cursor: pointer;
 }
 
-
 /* カーソルをポインターに変更 */
 #selectBox option:hover {
   cursor: pointer;
 }
-
 
 /* ② お名前欄*/
 input[name="お名前"]:hover {
@@ -434,7 +453,6 @@ textarea[name="お問い合わせ内容"]:hover {
   cursor: pointer;
 }
 
-
 /* ⑦ 確認ボタンとリセットボタン */
 input[type="submit"]:hover,
 input[type="reset"]:hover {
@@ -451,35 +469,162 @@ table.formTable th select:hover {
   cursor: pointer;
 }
 
-
-
-
-
 /* Add more styles as needed for checkboxes, radio buttons, and other elements */
 
 /*　簡易版レスポンシブ用CSS（必要最低限のみとしています。ブレークポイントも含め自由に設定下さい）　*/
-@media screen and (max-width:572px) {
-#formWrap {
-	width:95%;
-	margin:0 auto;
+@media screen and (max-width: 572px) {
+  #formWrap {
+    width: 95%;
+    margin: 0 auto;
+  }
+  table.formTable th,
+  table.formTable td {
+    width: auto;
+    display: block;
+  }
+  table.formTable th {
+    margin-top: 5px;
+    border-bottom: 0;
+  }
+  form input[type="text"],
+  form textarea {
+    width: 80%;
+    padding: 5px;
+    font-size: 110%;
+    display: block;
+  }
+  form input[type="submit"],
+  form input[type="reset"],
+  form input[type="button"] {
+    display: block;
+    width: 100%;
+    height: 40px;
+  }
 }
-table.formTable th, table.formTable td {
-	width:auto;
-	display:block;
-}
-table.formTable th {
-	margin-top:5px;
-	border-bottom:0;
-}
-form input[type="text"], form textarea {
-	width:80%;
-	padding:5px;
-	font-size:110%;
-	display:block;
-}
-form input[type="submit"], form input[type="reset"], form input[type="button"] {
-	display:block;
-	width:100%;
-	height:40px;
-}
+
+/* ブレイクポイント以下の画面幅で横スクロールを無効化 */
+@media screen and (max-width: 768px) {
+  /* スクロールを無効にする */
+  body {
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+  /* 縦ｽｸﾛｰﾙに切り替え */
+  #scroll {
+    display: block;
+    width: 100%;
+  }
+  /* ｽｸﾛｰﾙの無効化 */
+  .wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 子要素を中央に配置 */
+  }
+
+  /* ｺﾝﾃﾝﾂｺﾝﾃﾅ全般 */
+  #container {
+    width: auto; /* 幅を自動調整 */
+    margin: 5px; /* マージンを0に設定して中央配置を維持 */
+  }
+
+  .content h2 {
+    font-size: 1.5rem;
+    color: #d4421b;
+    letter-spacing: 10px; /* 文字間隔を調整（適宜調整） */
+  }
+
+  .heading h3 {
+    font-weight: bold; /* 太字にする */
+    font-size: 1.2rem;
+    margin: 10px;
+    letter-spacing: 10px; /* 文字間隔を調整（適宜調整） */
+  }
+
+  /* ﾀｲﾄﾙﾍﾟｰｼﾞ */
+  .mobile {
+    filter: contrast(20%) saturate(230%);
+  }
+
+  /* ｱﾊﾞｳﾄﾍﾟｰｼﾞ */
+  .about-img {
+    display: none; /* 画像を非表示 */
+  }
+  .about-container {
+    right: 0; /*ｺﾝﾃﾅ位置の調整*/
+  }
+
+  .explanation {
+    margin: 10px;
+    line-height: 1.5rem;
+    font-size: 0.8rem;
+  }
+
+  .explanation p {
+    letter-spacing: 4px; /* 文字間隔を2pxに設定 */
+    margin-bottom: 10px;
+  }
+
+  /* ｽｷﾙページ */
+  
+  .skill-container {
+    left: 0;
+  }
+
+  .skill-img {
+    display: none;
+  }
+  
+  .logo {
+    display: flex;
+    flex-direction: column; /* デフォルトは横並びなので不要ですが、明示的に指定 */
+    align-items: center; /* 垂直方向の中央揃え */
+  }
+
+  .logo div {
+    display: flex;
+    flex-direction: column; /* 横並びにする */
+    align-items: center; /* 垂直方向の中央揃え */
+    width: auto;
+    margin:0;
+    margin-bottom: 10px;
+  }
+
+  /* ｻｰﾋﾞｽﾍﾟｰｼﾞ */
+
+
+  .service-img {
+    display: none;
+  }
+  
+  .service-container {
+    right: 0;
+  }
+
+  .contact-img {
+    display: none;
+  }
+
+  .service {
+    display: flex;
+    flex-direction: column; /* デフォルトは横並びなので不要ですが、明示的に指定 */
+    align-items: center; /* 垂直方向の中央揃え */
+  }
+
+  .service div {
+    display: flex;
+    flex-direction: column; /* 横並びにする */
+    align-items: center; /* 垂直方向の中央揃え */
+    width: auto;
+  }
+
+
+
+  
+
+  .contact-container {
+    left: 0;
+  }
+
+  
 }
